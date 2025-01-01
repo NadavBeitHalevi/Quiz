@@ -1,5 +1,4 @@
 import html
-
 from quiz_service import QuizService
 from quiz_util import QuizUtil
 

@@ -10,7 +10,9 @@ class QuizBrain:
         self.score = 0
         self.quiz_service = q_sevice
         self.current_question = None
-        self.question_list = QuizUtil.quiz_transform(self.quiz_service.get_questions(num_of_questions="10"))
+        response = self.quiz_service.get_questions(num_of_questions="10")
+        
+        self.question_list = QuizUtil.quiz_transform(question_data=response)
         print(f"numer of questions: {len(self.question_list)}")
 
     def still_has_questions(self):

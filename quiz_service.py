@@ -7,7 +7,8 @@ from question_model import Question
 class QuizService:
     def __init__(self, base_url: str = "https://opentdb.com/api.php", question_type: str = "boolean"):
         self.parameters = {
-            "type": question_type
+            "type": question_type,
+            "category": "18",
         }
         self.base_url = base_url
 
@@ -17,6 +18,3 @@ class QuizService:
         response.raise_for_status()
         question_data = response.json().get("results", [])
         return question_data
-
-    def quiz_transform(self, question_data: List[Dict[str, str]]) -> List[Question]:
-        return [Question(question["question"], question["correct_answer"]) for question in question_data]

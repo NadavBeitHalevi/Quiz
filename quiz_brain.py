@@ -3,8 +3,8 @@ import html
 from quiz_service import QuizService
 from quiz_util import QuizUtil
 
-class QuizBrain:
 
+class QuizBrain:
     def __init__(self, q_sevice: QuizService):
         self.question_number = 0
         self.score = 0
@@ -26,7 +26,7 @@ class QuizBrain:
 
     def check_answer(self, user_answer) -> bool:
         correct_answer = self.current_question.answer
-        answer = user_answer.lower() == correct_answer.lower() 
+        answer = user_answer.lower() == correct_answer.lower()
         if answer:
             self.score += 1
             print("You got it right!")

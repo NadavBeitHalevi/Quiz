@@ -1,9 +1,6 @@
 from typing import Dict, List
 import requests
 
-from question_model import Question
-
-
 class QuizService:
     def __init__(self, base_url: str = "https://opentdb.com/api.php", question_type: str = "boolean"):
         self.parameters = {
